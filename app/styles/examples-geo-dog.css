@@ -1,0 +1,231 @@
+body {
+    font-size: 12px;
+    color: #666;
+}
+a:link,
+a:visited {
+    color: #666;
+}
+img{
+    max-width:100%;
+}
+
+.markerContentStyle{
+    width:27px;
+}
+/* 快递员图标样式 */
+#tip{
+    height: 70px;
+    background-color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    position:absolute;
+    font-size: 12px;
+    right: 10px;
+    bottom: 30px;
+    border-radius: 3px;
+    line-height: 30px;
+    border:1px solid #ccc;
+}
+#tip input{
+    border:1px solid #ddd;
+    height:23px;
+    border-radius:3px;
+    outline:none;
+}
+
+.markerContentStyle span {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #0000FF;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 3px;
+    top: 32px;
+    left: -4px;
+    padding: 1px;
+    width: 36px;
+    line-height:12px;
+    text-align: center; 
+}
+
+.span1 {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #0000FF;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 3px;
+    top: 34px;
+    width: 36px;
+    left: -10px;
+    padding: 2px;
+    text-align: center;
+}
+/* 全屏地图样式 */
+.mapContainer{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+    width:100%;
+    height:100%;
+}
+.full-screen-aside{
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:10000;
+    width:240px;
+    padding-left:30px;
+    padding-right:30px;
+    background-color:rgba(255,255,255,0.8);
+}
+.full-screen-logo{
+    padding-top:12px;
+    padding-bottom:16px;
+    text-align:center;
+}
+.full-screen-title{
+    padding-bottom:34px;
+    font-size:16px;
+}
+.full-screen-article{
+    margin-bottom:26px;
+}
+.full-screen-footer{
+    padding-top:46px;
+    margin-bottom:154px;
+}
+.full-screen-link{
+    border-bottom:1px solid #999;
+}
+@media screen and (min-width: 320px) and (max-width: 979px) {
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+    .container{
+        width:100%;
+    }
+    .pc-text,.full-screen-btn{
+        display:none;
+    }
+    .header,
+    .index-nav {
+        border: 0;
+    }
+    .index-header {
+        background: none;
+    }
+    .header {
+        width: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: relative;
+        z-index: 9;
+    }
+    .header:before {
+        content: "GeoDog配送员定位案例";
+        height: 60px;
+        width: 100%;
+        background: url(../images/header-logo.svg) left center no-repeat;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -ms-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+        text-align: center;
+        line-height: 60px;
+        font-size: 24px;
+        padding-left:42px;
+    }
+    .content,
+    .example-details,
+    .amap,
+    .amapReal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .example-details {
+        overflow: hidden;
+    }
+    .mapContainer {
+        height: 100%;
+    }
+    .all-exam,
+    .example-show,
+    .index-header,
+    h3,
+    .footer,
+    .mapTitle {
+        display: none;
+    }
+    .description {
+        position:absolute;
+        z-index:999;
+        bottom:0;
+        padding-left:2%;
+        padding-right:2%;
+        box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -ms-box-sizing:border-box;
+        -o-box-sizing:border-box;
+        width:100%;
+        height:auto; 
+        display:block;
+    }
+    .description-title{
+        font-size:1.8rem;
+        text-align:center;
+        line-height:4.5rem;
+        font-weight:500;
+        background-color:rgba(255, 255, 255, 0.8);
+        box-shadow:0 -1px 2px 0 rgba(0,0,0,0.1);
+    }
+    .description-details{
+        padding-left:8%;
+        padding-right:8%;
+        padding-bottom:3%;
+        font-size:1.2rem;
+        background-color:rgba(255, 255, 255, 0.8);
+        display:none;
+    }
+    .description-details-center{
+        margin-top:6%;
+        margin-bottom:6%;
+    }
+    .slide-up-arr{
+        position:absolute;
+        top:0;
+        left:50%;
+        z-index:1;
+        width:60px;
+        padding-top:60px;
+        background:url(/images/examples/geo-dog/arr.png) no-repeat center bottom/60px;
+        transform:translate3d(-50%,-100%,0);
+        -webkti-transform:translate3d(-50%,-100%,0);
+        -moz-transform:translate3d(-50%,-100%,0);
+        -ms-transform:translate3d(-50%,-100%,0);
+        -o-transform:translate3d(-50%,-100%,0);
+    }
+    .amap-zoomcontrol{
+        transform:scale(0.7);
+        -webkit-transform:scale(0.7);
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 979px) {
+    .header {
+        display: none;
+    }
+}
