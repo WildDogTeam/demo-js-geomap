@@ -86,6 +86,9 @@ img{
     padding: 2px;
     text-align: center;
 }
+.description{
+    display:none;
+}
 /* 全屏地图样式 */
 .mapContainer{
     position:fixed;
@@ -108,7 +111,7 @@ img{
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     -o-box-sizing:border-box;
-    width:240px;
+    width:320px;
     padding-left:30px;
     padding-right:30px;
     background-color:rgba(255,255,255,0.9);
@@ -236,17 +239,17 @@ img{
     }
     .slide-up-arr{
         position:absolute;
-        top:0;
+        top:-60px;
         left:50%;
         z-index:1;
         width:60px;
         padding-top:60px;
         background:url(/images/arr.png) no-repeat center bottom/60px;
-        transform:translate3d(-50%,-100%,0);
-        -webkti-transform:translate3d(-50%,-100%,0);
-        -moz-transform:translate3d(-50%,-100%,0);
-        -ms-transform:translate3d(-50%,-100%,0);
-        -o-transform:translate3d(-50%,-100%,0);
+        transform:translate(-50%);
+        -webkti-transform:translate(-50%);
+        -moz-transform:translate(-50%);
+        -ms-transform:translate(-50%);
+        -o-transform:translate(-50%);
     }
     .amap-zoomcontrol{
         transform:scale(0.7);
