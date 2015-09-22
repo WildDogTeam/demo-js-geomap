@@ -1,5 +1,6 @@
 body {
-    font-size: 12px;
+    font-size: 14px;
+    line-height:24px;
     color: #666;
 }
 a:link,
@@ -102,10 +103,15 @@ img{
     top:0;
     right:0;
     z-index:10000;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
     width:240px;
     padding-left:30px;
     padding-right:30px;
-    background-color:rgba(255,255,255,0.8);
+    background-color:rgba(255,255,255,0.9);
 }
 .full-screen-logo{
     padding-top:12px;
@@ -115,6 +121,7 @@ img{
 .full-screen-title{
     padding-bottom:34px;
     font-size:16px;
+    text-align:center;
 }
 .full-screen-article{
     margin-bottom:26px;
@@ -156,6 +163,10 @@ img{
         content: "GeoDog配送员定位案例";
         display:block;
         box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -ms-box-sizing:border-box;
+        -o-box-sizing:border-box;
         width: 100%;
         background: url(/images/header-logo-m.svg) 10px center no-repeat;
         -webkit-background-size: contain;
@@ -208,7 +219,7 @@ img{
         text-align:center;
         line-height:4.5rem;
         font-weight:500;
-        background-color:rgba(255, 255, 255, 0.8);
+        background-color:rgba(255, 255, 255, 0.9);
         box-shadow:0 -1px 2px 0 rgba(0,0,0,0.1);
     }
     .description-details{
@@ -216,7 +227,7 @@ img{
         padding-right:8%;
         padding-bottom:3%;
         font-size:1.2rem;
-        background-color:rgba(255, 255, 255, 0.8);
+        background-color:rgba(255, 255, 255, 0.9);
         display:none;
     }
     .description-details-center{
