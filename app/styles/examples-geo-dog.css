@@ -246,7 +246,7 @@ img{
         padding-top:60px;
         background:url(/images/arr.png) no-repeat center bottom/60px;
         transform:translate(-50%);
-        -webkti-transform:translate(-50%);
+        -webkit-transform:translate(-50%);
         -moz-transform:translate(-50%);
         -ms-transform:translate(-50%);
         -o-transform:translate(-50%);
