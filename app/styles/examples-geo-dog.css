@@ -6,12 +6,33 @@ a:link,
 a:visited {
     color: #666;
 }
+p{
+    margin:0;
+}
 img{
     max-width:100%;
 }
-
 .markerContentStyle{
     width:27px;
+}
+
+.container {
+    width: 980px;
+}
+.example-details {
+    width: 804px;
+    margin: 0 auto;
+    position: relative;
+}
+.content {
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 90px;
+    min-height: 100%;
+}
+.amap {
+    padding-top: 30px;
 }
 /* 快递员图标样式 */
 #tip{
@@ -69,9 +90,12 @@ img{
     position:fixed;
     top:0;
     left:0;
-    z-index: 9999;
+    z-index: 9;
     width:100%;
     height:100%;
+}
+.hide{
+    display:none;
 }
 .full-screen-aside{
     position:fixed;
@@ -95,9 +119,9 @@ img{
 .full-screen-article{
     margin-bottom:26px;
 }
-.full-screen-footer{
+.full-screen-link-index{
     padding-top:46px;
-    margin-bottom:154px;
+    padding-bottom:154px;
 }
 .full-screen-link{
     border-bottom:1px solid #999;
@@ -110,9 +134,6 @@ img{
     }
     .container{
         width:100%;
-    }
-    .pc-text,.full-screen-btn{
-        display:none;
     }
     .header,
     .index-nav {
@@ -127,13 +148,14 @@ img{
         padding-bottom: 5px;
         background-color: rgba(255, 255, 255, 0.9);
         position: relative;
-        z-index: 9;
+        z-index: 99;
     }
     .header:before {
         content: "GeoDog配送员定位案例";
-        height: 60px;
+        display:block;
+        box-sizing:border-box;
         width: 100%;
-        background: url(../images/header-logo.svg) left center no-repeat;
+        background: url(/images/header-logo-m.svg) 10px center no-repeat;
         -webkit-background-size: contain;
         -moz-background-size: contain;
         -ms-background-size: contain;
@@ -146,8 +168,7 @@ img{
     }
     .content,
     .example-details,
-    .amap,
-    .amapReal {
+    .amap {
         position: absolute;
         top: 0;
         left: 0;
@@ -162,11 +183,6 @@ img{
     .mapContainer {
         height: 100%;
     }
-    .all-exam,
-    .example-show,
-    .index-header,
-    h3,
-    .footer,
     .mapTitle {
         display: none;
     }
@@ -212,7 +228,7 @@ img{
         z-index:1;
         width:60px;
         padding-top:60px;
-        background:url(/images/examples/geo-dog/arr.png) no-repeat center bottom/60px;
+        background:url(/images/arr.png) no-repeat center bottom/60px;
         transform:translate3d(-50%,-100%,0);
         -webkti-transform:translate3d(-50%,-100%,0);
         -moz-transform:translate3d(-50%,-100%,0);
@@ -223,9 +239,19 @@ img{
         transform:scale(0.7);
         -webkit-transform:scale(0.7);
     }
-}
-@media screen and (min-width: 480px) and (max-width: 979px) {
-    .header {
-        display: none;
+    .full-screen-aside{
+        display:none;
     }
 }
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .header:before {
+        font-size: 20px;
+        line-height:40px;
+    }
+    .description-title{
+        font-size:1.4rem;
+        text-align:center;
+        line-height:3rem;
+    }
+}
+
