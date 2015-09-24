@@ -127,8 +127,9 @@ function initializeMap() {
 	stationMarkerContent.appendChild(stationMarkerImg);
 		 
 	//点标记中的文本
-	var stationMarkerSpan = document.createElement("span1");
+	var stationMarkerSpan = document.createElement("span");
 	stationMarkerSpan.innerHTML = '配送站';
+	stationMarkerSpan.setAttribute("class", "span1");
 	stationMarkerContent.appendChild(stationMarkerSpan);
 
 	var stationMarker  = new AMap.Marker({
@@ -166,7 +167,7 @@ function createdeliveryMarker(delivery, deliveryColor) {
 	//点标记中的图标
 	var markerImg = document.createElement("img");
 	markerImg.className = "markerlnglat";
-	markerImg.src = "/images/man.png";
+	markerImg.src = "images/man.png";
 	markerImg.height = "35";
 	markerImg.width = "27";
 	markerContent.appendChild(markerImg);
