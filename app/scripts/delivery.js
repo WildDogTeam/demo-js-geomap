@@ -1,6 +1,6 @@
 //map variable
 var map;
-var delivery;
+
 // Set the center as Wilddog HQ
 var locations = {
   "WilddogHQ": [39.897614,116.408032],
@@ -12,10 +12,10 @@ var center = locations["WilddogHQ"];
 var radiusInKm = 1.5;
 
 // Get a reference to the Wilddog public transit open data set
-var transitWilddogRef = new Wilddog("https://geofire-demo.wilddogio.com/");
+var transitWilddogRef = new Wilddog("https://geofire-demo.wilddogio.com/")
 
-// Create a new GeoFire instance, pulling data from the public transit data
-var geoFire = new GeoFire(transitWilddogRef.child("_geofire"));
+// Create a new GeoDog instance, pulling data from the public transit data
+var geoDog = new GeoDog(transitWilddogRef.child("_geofire"));
 
 /*************/
 /*  GEOQUERY */
@@ -24,7 +24,7 @@ var geoFire = new GeoFire(transitWilddogRef.child("_geofire"));
 var deliverysInQuery = {};
 
 // Create a new GeoQuery instance
-var geoQuery = geoFire.query({
+var geoQuery = geoDog.query({
   center: center,
   radius: radiusInKm
 });
@@ -129,7 +129,7 @@ function initializeMap() {
 	//点标记中的文本
 	var stationMarkerSpan = document.createElement("span");
 	stationMarkerSpan.innerHTML = '配送站';
-	stationMarkerSpan.setAttribute("class", "span1");
+	stationMarkerSpan.setAttribute("class", "span1")
 	stationMarkerContent.appendChild(stationMarkerSpan);
 
 	var stationMarker  = new AMap.Marker({
