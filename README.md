@@ -1,3 +1,3 @@
-# demo_js_geo
+# demo-js-geomap
 
-demo_js_geo 是一个使用Wilddog实现的模拟实时快递查看功能。
+demo-js-geomap 是一个使用wilddog.js,基于wilddog的轻量js库wildgeo.js和高德地图api完成的一个地图应用，能够实现实时的geohash范围查询。
