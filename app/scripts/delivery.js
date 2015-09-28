@@ -14,8 +14,8 @@ var radiusInKm = 1.5;
 // Get a reference to the Wilddog public transit open data set
 var transitWilddogRef = new Wilddog("https://geofire-demo.wilddogio.com/")
 
-// Create a new GeoDog instance, pulling data from the public transit data
-var geoDog = new GeoDog(transitWilddogRef.child("_geofire"));
+// Create a new WildGeo instance, pulling data from the public transit data
+var wildGeo = new WildGeo(transitWilddogRef.child("_geofire"));
 
 /*************/
 /*  GEOQUERY */
@@ -24,7 +24,7 @@ var geoDog = new GeoDog(transitWilddogRef.child("_geofire"));
 var deliverysInQuery = {};
 
 // Create a new GeoQuery instance
-var geoQuery = geoDog.query({
+var geoQuery = wildGeo.query({
   center: center,
   radius: radiusInKm
 });

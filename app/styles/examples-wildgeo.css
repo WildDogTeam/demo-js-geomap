@@ -159,7 +159,7 @@ img{
         margin-right: 10px;
     }
     .header:before {
-        content: "GeoDog配送员定位案例";
+        content: "WildGeo配送员定位案例";
         display:block;
         box-sizing:border-box;
         -webkit-box-sizing:border-box;
