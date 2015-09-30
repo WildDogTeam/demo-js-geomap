@@ -12,7 +12,7 @@ var center = locations["WilddogHQ"];
 var radiusInKm = 1.5;
 
 // Get a reference to the Wilddog public transit open data set
-var transitWilddogRef = new Wilddog("https://geofire-demo.wilddogio.com/")
+var transitWilddogRef = new Wilddog("https://geomap.wilddogio.com/")
 
 // Create a new WildGeo instance, pulling data from the public transit data
 var wildGeo = new WildGeo(transitWilddogRef.child("_geofire"));

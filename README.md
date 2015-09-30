@@ -21,6 +21,7 @@ cd  demo-js-geomap
 安装依赖：
 
 ```
+npm install grunt -g
 npm install
 ```
 
