@@ -61,7 +61,7 @@ demo-js-geomap is built on and with the aid of several  projects. We would like 
 Open Source:
 
 * [GeoFire](https://github.com/firebase/geofire-js) Realtime location queries with Firebase
-* [Jquery](query.com) The Write Less, Do More, JavaScript Library
+* [JQuery](http://jquery.com) The Write Less, Do More, JavaScript Library
 
 Commercial Partner：
 
