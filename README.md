@@ -35,8 +35,8 @@ grunt
 * [lib-js-wildgeo](https://github.com/WildDogTeam/lib-js-wildgeo) 基于地理坐标位置存储，使用存储位置坐标的geo hash值查询附近的信息。结合野狗实时系统，能够动态跟踪给定的地理区域内移动的数据。
 
 
-## TODO
-nothing
+## 注册Wilddog
+WildGeo需要用Wilddog数据库存储位置数据， 你可以在此[注册](https://www.wilddog.com/my-account/signup)Wilddog账户
 
 ## 支持
 如果在使用过程中有任何问题，请提 [issue](https://github.com/WildDogTeam/demo-js-geomap/issues) ，我会在 Github 上给予帮助。
