@@ -11,8 +11,8 @@ http://geomap.wilddogapp.com/
 首先确认本机已经安装 [Node.js](http://nodejs.org/) 运行环境，然后执行下列指令：
 
 ```
-git clone git@github.com:WildDogTeam/demo-js-wildpad.git
-cd  demo-js-wildpad
+git clone git@github.com:WildDogTeam/demo-js-geomap.git
+cd  demo-js-geomap
 ```
 
 安装依赖：
@@ -28,7 +28,7 @@ grunt
 ```
 
 ## 支持
-如果在使用过程中有任何问题，请提 [issue](https://github.com/WildDogTeam/demo-js-wildpad/issues) ，我会在 Github 上给予帮助。
+如果在使用过程中有任何问题，请提 [issue](https://github.com/WildDogTeam/demo-js-geomap/issues) ，我会在 Github 上给予帮助。
 
 ## 相关文档
 
