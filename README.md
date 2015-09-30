@@ -2,8 +2,11 @@
 
 demo-js-geomap 是一个使用wilddog.js,基于wilddog的轻量js库wildgeo.js和高德地图api完成的一个地图应用，能够实现实时的geohash范围查询。
 
-在线示例
+## 在线示例
 http://geomap.wilddogapp.com/
+
+我们提供了一个实例，这个实例将展示在北京市某片区域内的某快递公司快递员的实时动态位置信息，点击地图内的任意点更改紫色圆圈的位置。
+[![ 在 GeoMap 演示截图](screenshot.jpg)](http://geomap.wilddogapp.com/)
 
 
 ## 本地运行
@@ -26,6 +29,14 @@ npm install
 ```
 grunt
 ```
+
+## 依赖项目
+
+* [lib-js-wildgeo](https://github.com/WildDogTeam/lib-js-wildgeo) 开源js库 WildGeo 可以基于地理坐标位置存储和查询一组key值，它的核心是存储位置坐标的key值。这最大的好处是能够实时地在给定的地理区域内查询符合条件的key值。
+
+
+## TODO
+nothing
 
 ## 支持
 如果在使用过程中有任何问题，请提 [issue](https://github.com/WildDogTeam/demo-js-geomap/issues) ，我会在 Github 上给予帮助。
