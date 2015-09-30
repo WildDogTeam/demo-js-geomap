@@ -45,7 +45,7 @@ http://wilddog.mit-license.org/
 
 ## 感谢 Thanks
 
-demo_js_geo is built on and with the aid of several  projects. We would like to thank the following projects for helping us achieve our goals:
+demo-js-geomap is built on and with the aid of several  projects. We would like to thank the following projects for helping us achieve our goals:
 
 Open Source:
 
