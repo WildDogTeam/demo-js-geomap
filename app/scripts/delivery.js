@@ -216,7 +216,7 @@ AMap.Marker.prototype.animatedMoveTo = function(newLocation) {
       if (percent >= 1) {
         window.clearInterval(interval);
       }
-    }.bind(this), 50);
+    }.bind(this), 10);
   }
 
 }
