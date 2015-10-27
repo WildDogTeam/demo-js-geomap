@@ -55,6 +55,14 @@
   
   <script>
     initializeMap();
+    $('.description-title').click(function(e){ 
+        var ele= $('.description-details');  
+        if(ele.is(":hidden")) {
+            ele.show();
+        } else {
+            ele.hide();
+		} 
+    });
   </script>
 
 </body>
