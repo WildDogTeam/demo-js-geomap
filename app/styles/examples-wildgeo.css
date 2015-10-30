@@ -13,6 +13,11 @@ p{
 img{
     max-width:100%;
 }
+.text-center{
+    text-align:center;
+    padding-top:20px;
+    padding-bottom:20px;
+}
 .markerContentStyle{
     width:27px;
 }
@@ -67,7 +72,7 @@ img{
     top: 32px;
     left: -4px;
     padding: 1px;
-    width: 36px;
+    width: 30px;
     line-height:12px;
     text-align: center; 
 }
@@ -167,7 +172,6 @@ img{
         -ms-box-sizing:border-box;
         -o-box-sizing:border-box;
         width: 100%;
-        background: url(/images/header-logo-m.svg) 10px center no-repeat;
         -webkit-background-size: contain;
         -moz-background-size: contain;
         -ms-background-size: contain;
@@ -176,7 +180,6 @@ img{
         text-align: center;
         line-height: 60px;
         font-size: 24px;
-        padding-left:42px;
     }
     .content,
     .example-details,
@@ -240,7 +243,7 @@ img{
         z-index:1;
         width:60px;
         padding-top:60px;
-        background:url(/images/arr.png) no-repeat center bottom/60px;
+        background:url(../images/arr.png) no-repeat center bottom/60px;
         transform:translate(-50%);
         -webkit-transform:translate(-50%);
         -moz-transform:translate(-50%);

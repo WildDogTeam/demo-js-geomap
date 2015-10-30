@@ -81,20 +81,29 @@ geoQuery.on("key_exited", function(deliveryId, deliveryLocation) {
 /*  gaode MAPS  */
 /*****************/
 /* Initializes gaode Maps */
-function initializeMap() {
-	var loc = new AMap.LngLat(center[1], center[0]);
-	//初始化地图对象，加载地图
+var defineMap = function (loc,zoom) {
 	map = new AMap.Map("mapContainer", {
 		resizeEnable: true,
 		view: new AMap.View2D({
 				center: loc,
-				zoom: 15
+				zoom: zoom
 			})
 	});
+};
+
+function initializeMap() {
+	var loc = new AMap.LngLat(center[1], center[0]);
+	//初始化地图对象，加载地图
+	var UA = navigator.userAgent;
+	if (UA.indexOf("Mobile") == -1 || UA.indexOf("Mobile") == -1) {
+		defineMap(loc, 15);
+	} else {
+		defineMap(loc , 13);
+	};
 	//加载工具条
 	map.plugin(["AMap.ToolBar"],function(){
 		var tool = new AMap.ToolBar();
-	   	map.addControl(tool);   
+	   	map.addControl(tool); 
 			});
 
 	//加载比例尺

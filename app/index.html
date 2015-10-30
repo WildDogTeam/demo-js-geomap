@@ -35,9 +35,10 @@
                   <span class="slide-up-arr"></span>
                   <div class="description-title">案例介绍</div>
                   <div class="description-details">
-                    <p>你可以通过点击地图的不同区域，来查看各中心点周边3KM范围内的快递员实时运动轨迹。实际场景中，可配合定位系统实现路径规划、准点率监控等功能。（移动版暂不支持点击事件）</p>
+                    <p>你可以通过点击地图的不同区域，来查看各中心点周边3KM范围内的快递员实时运动轨迹。实际场景中，可配合定位系统实现路径规划、准点率监控等功能。</p>
                     <p class="description-details-center">出于安全考虑，地图中的数据都是模拟数据。</p>
                     <p>此方案采用 WildGeo + 野狗实时 + 高德地图 + 野狗GPS移动定位设备组成。</p>
+                    <div class="text-center"><img src="images/header-logo.svg" alt=""></div>
                   </div>
                 </div>
             </div>
@@ -52,17 +53,10 @@
   <script src="scripts/wildgeo.min.js"></script>
   <script src="scripts/lodash.min.js"></script> 
   <script src="scripts/delivery.js"></script>
+  <script src="scripts/geomap.js"></script>
   
   <script>
     initializeMap();
-    $('.description-title').click(function(e){ 
-        var ele= $('.description-details');  
-        if(ele.is(":hidden")) {
-            ele.show();
-        } else {
-            ele.hide();
-		} 
-    });
   </script>
 
 </body>
