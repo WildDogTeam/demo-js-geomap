@@ -3,8 +3,7 @@ var map;
 
 // Set the center as Wilddog HQ
 var locations = {
-  "WilddogHQ": [39.897614,116.408032],
-  "Caltrain": [39.897614,116.408032]
+  "WilddogHQ": [39.897614,116.408032]
 };
 var center = locations["WilddogHQ"];
 
@@ -47,7 +46,7 @@ geoQuery.on("key_entered", function(deliveryId, deliveryLocation) {
       deliverysInQuery[deliveryId] = delivery;
 
       // Create a new marker for the delivery
-      delivery.marker = createdeliveryMarker(delivery, getdeliveryColor(delivery));
+      delivery.marker = createdeliveryMarker(delivery);
     }
   });
 });
@@ -59,7 +58,8 @@ geoQuery.on("key_moved", function(deliveryId, deliveryLocation) {
   var delivery = deliverysInQuery[deliveryId];
   // Animate the delivery's marker
   if (typeof delivery !== "undefined" && typeof delivery.marker !== "undefined") {
-    delivery.marker.animatedMoveTo(deliveryLocation);
+    var pos = new AMap.LngLat(deliveryLocation[1],deliveryLocation[0])
+    delivery.marker.moveTo(pos,500);
     }
 });
 
@@ -70,6 +70,7 @@ geoQuery.on("key_exited", function(deliveryId, deliveryLocation) {
   var delivery = deliverysInQuery[deliveryId];
   // If the delivery's data has already been loaded from the Open Data Set, remove its marker from the map
   if (delivery !== true &&  typeof delivery.marker !== "undefined") {
+  	delivery.marker.stopMove();
     delivery.marker.setMap(null);
   }
 
@@ -168,7 +169,7 @@ function initializeMap() {
 /*  HELPER FUNCTIONS  */
 /**********************/
 /* Adds a marker for the inputted delivery to the map */
-function createdeliveryMarker(delivery, deliveryColor) {
+function createdeliveryMarker(delivery) {
 	//自定义点标记内容   
 	var markerContent = document.createElement("div");
 	markerContent.className = "markerContentStyle";
@@ -194,38 +195,4 @@ function createdeliveryMarker(delivery, deliveryColor) {
 		
 	});
   	return marker;
-}
-
-/* Returns a blue color code for outbound deliverys or a red color code for inbound deliverys */
-function getdeliveryColor(delivery) {
-  return ((delivery.dirTag && delivery.dirTag.indexOf("OB") > -1) ? "50B1FF" : "FF6450");
-}
-
-/* Returns true if the two inputted coordinates are approximately equivalent */
-function coordinatesAreEquivalent(coord1, coord2) {
-  return (Math.abs(coord1 - coord2) < 0.000001);
-}
-
-AMap.Marker.prototype.animatedMoveTo = function(newLocation) {
-  var toLat = newLocation[0];
-  var toLng = newLocation[1];
-  var fromLat = this.getPosition().getLat();
-  var fromLng = this.getPosition().getLng();
-
-  if (!coordinatesAreEquivalent(fromLat, toLat) || !coordinatesAreEquivalent(fromLng, toLng)) {
-    var percent = 0;
-    var latDistance = toLat - fromLat;
-    var lngDistance = toLng - fromLng;
-    var interval = window.setInterval(function () {
-      percent += 0.01;
-      var curLat = fromLat + (percent * latDistance);
-      var curLng = fromLng + (percent * lngDistance);
-      var pos = new AMap.LngLat(curLng,curLat)
-      this.setPosition(pos);
-      if (percent >= 1) {
-        window.clearInterval(interval);
-      }
-    }.bind(this), 10);
-  }
-
 }
