@@ -50,10 +50,9 @@ WildGeo需要用Wilddog数据库存储位置数据， 你可以在此[注册](ht
 
 * [Wilddog 概览](https://z.wilddog.com/overview/introduction)
 * [JavaScript SDK快速入门](https://z.wilddog.com/web/quickstart)
-* [JavaScript SDK 开发向导](https://z.wilddog.com/web/quickstart)
 * [JavaScript SDK API](https://z.wilddog.com/web/api)
 * [下载页面](https://www.wilddog.com/download/)
-* [Wilddog FAQ](https://z.wilddog.com/faq/qa)
+* [Wilddog FAQ](https://z.wilddog.com/questions)
 
 ## License
 MIT
