@@ -35,10 +35,10 @@ grunt
 此时你就可以看到实时移动的快递员了，该应用用的是我们的AppId, 如果你想移植到自己的野狗 App 上，那怎么组织野狗中的数据呢？
 我们在代码中的dataInitAndMoveSimulator中提供了初始化数据的java工程dataInit和模拟位置坐标实时变化的nodejs工程moveSimulator。
 
-首先修改 app/scripts/delivery.js 中的 AppId 为你的野狗App的 AppId
-dataInit：运行WildGeoDataGenerator类的main方法即可生成初始化数据，前提是你将代码中的 AppId 换成你的 AppId 。
-moveSimulator：进入该目录后，命令行中执行 npm install，再运行 node moveSimulator.js 即可改变野狗数据中的坐标信息，模拟实时变化的快递员坐标。前提也是把代码中涉及AppId和超级密钥的地方换成你的AppId和超级密钥。
-完成以上步骤之后，按照上面的启动项目步骤启动即可。
+* 首先修改 app/scripts/delivery.js 中的 AppId 为你的野狗App的 AppId
+* dataInit：运行WildGeoDataGenerator类的main方法即可生成初始化数据，前提是你将代码中的 AppId 换成你的 AppId 。
+* moveSimulator：进入该目录后，命令行中执行 npm install，再运行 node moveSimulator.js 即可改变野狗数据中的坐标信息，模拟实时变化的快递员坐标。前提也是把代码中涉及AppId和超级密钥的地方换成你的AppId和超级密钥。
+* 完成以上步骤之后，按照上面的启动项目步骤启动即可。
 
 ## 依赖项目
 
