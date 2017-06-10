@@ -104,8 +104,11 @@ img{
     display:none;
 }
 .full-screen-aside{
+    top: 0;
+    bottom:0;
     position:fixed;
-    top:0;
+    overflow-y:scroll;
+    overflow-x:hidden;  
     left: 0;
     z-index:10000;
     box-sizing:border-box;

@@ -120,27 +120,27 @@ function initializeMap() {
   });
 
   //自定义点标记内容
-  var stationMarkerContent = document.createElement("div");
-  stationMarkerContent.className = "markerContentStyle";
-
-  //点标记中的图标
-  var stationMarkerImg = document.createElement("img");
-  stationMarkerImg.className = "markerlnglat";
-  stationMarkerImg.src = "http://webapi.amap.com/images/marker_sprite.png";
-  stationMarkerContent.appendChild(stationMarkerImg);
-
-  //点标记中的文本
-  var stationMarkerSpan = document.createElement("span");
-  stationMarkerSpan.innerHTML = '配送站';
-  stationMarkerSpan.setAttribute("class", "span1")
-  stationMarkerContent.appendChild(stationMarkerSpan);
-
-  var stationMarker = new AMap.Marker({
-    map: map,
-    position: new AMap.LngLat(116.408032, 39.897614), //基点位置
-    autoRotation: false,
-    content: stationMarkerContent //自定义点标记覆盖物内容
-  });
+  // var stationMarkerContent = document.createElement("div");
+  // stationMarkerContent.className = "markerContentStyle";
+  //
+  // //点标记中的图标
+  // var stationMarkerImg = document.createElement("img");
+  // stationMarkerImg.className = "markerlnglat";
+  // stationMarkerImg.src = "http://webapi.amap.com/images/marker_sprite.png";
+  // stationMarkerContent.appendChild(stationMarkerImg);
+  //
+  // //点标记中的文本
+  // var stationMarkerSpan = document.createElement("span");
+  // stationMarkerSpan.innerHTML = '配送站';
+  // stationMarkerSpan.setAttribute("class", "span1")
+  // stationMarkerContent.appendChild(stationMarkerSpan);
+  //
+  // var stationMarker = new AMap.Marker({
+  //   map: map,
+  //   position: new AMap.LngLat(116.408032, 39.897614), //基点位置
+  //   autoRotation: false,
+  //   content: stationMarkerContent //自定义点标记覆盖物内容
+  // });
 
   //自定义点标记内容
   var markerContent = document.createElement("div");
@@ -258,7 +258,7 @@ function startRealPosition() {
           var content = activeMarker.getContent();
           content.children[2].innerText = '距离野狗 '+ Math.round(distance) + ' 米';
       }
-  })
+  });
 }
 
 startRealPosition();
