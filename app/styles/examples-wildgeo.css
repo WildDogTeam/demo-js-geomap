@@ -3,10 +3,10 @@ body {
     line-height:24px;
     color: #666;
 }
-a:link,
+/*a:link,
 a:visited {
-    color: #666;
-}
+    color: #555;
+}*/
 p{
     margin:0;
 }
@@ -74,7 +74,7 @@ img{
     padding: 1px;
     width: 30px;
     line-height:12px;
-    text-align: center; 
+    text-align: center;
 }
 
 .markerContentStyle .span1 {
@@ -106,17 +106,17 @@ img{
 .full-screen-aside{
     position:fixed;
     top:0;
-    right:0;
+    left: 0;
     z-index:10000;
     box-sizing:border-box;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     -o-box-sizing:border-box;
-    width:320px;
+    width:380px;
     padding-left:30px;
     padding-right:30px;
-    background-color:rgba(255,255,255,0.9);
+    background-color:rgba(255,255,255,1);
 }
 .full-screen-logo{
     padding-top:12px;
@@ -128,15 +128,64 @@ img{
     font-size:16px;
     text-align:center;
 }
+.full-screen-function{
+    margin-bottom: 4px;
+    color: #555;
+    font-weight:700;
+    font-size: 16px;
+}
 .full-screen-article{
     margin-bottom:26px;
 }
+.full-screen-article-tip{
+    margin-bottom:16px;
+    font-size: 12px;
+    color: #999;
+}
 .full-screen-link-index{
+    float: right;
     padding-top:46px;
-    padding-bottom:154px;
+    padding-bottom:20px;
 }
 .full-screen-link{
     border-bottom:1px solid #999;
+    color: #999;
+}
+.full-screen-link:hover{
+    cursor: pointer;
+}
+.full-screen-function-dev{
+    color: #999;
+    margin-left: 12px;
+    font-size: 12px;
+}
+.full-screen-function-btn{
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight:600;
+}
+.full-screen-function-btn:hover{
+    cursor: pointer;
+}
+.activePoint{
+    width: 300px;
+    height: 50px;
+}
+.point{
+    margin-top: 24px;
+    float: left;
+    height: 14px;
+    width: 14px;
+}
+.distance{
+    width: 196px;
+    height: 72px;
+    float: left;
+}
+.distance-tip{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 60px;
 }
 @media screen and (min-width: 320px) and (max-width: 979px) {
     html,
@@ -214,7 +263,7 @@ img{
         -ms-box-sizing:border-box;
         -o-box-sizing:border-box;
         width:100%;
-        height:auto; 
+        height:auto;
         display:block;
     }
     .description-title{
