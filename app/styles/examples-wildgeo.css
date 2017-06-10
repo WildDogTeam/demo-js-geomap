@@ -119,6 +119,7 @@ img{
     background-color:rgba(255,255,255,1);
 }
 .full-screen-logo{
+    width: 160px;
     padding-top:12px;
     padding-bottom:16px;
     text-align:center;
