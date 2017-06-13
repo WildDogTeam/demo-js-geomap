@@ -3,10 +3,10 @@
 demo-js-geomap 是一个基于wilddog JavaScript SDK和高德LBS开放平台完成的一个地图应用，能够实现实时的geohash范围查询。
 
 ## 在线示例
-http://geomap.wilddogapp.com/
+http://location.wilddogapp.com/
 
 我们提供了一个实例，展示在北京市某片区域内的某快递公司快递员的实时动态位置信息，点击地图内的任意点更改紫色圆圈的位置。
-[![ 在 GeoMap 演示截图](screenshot.jpg)](http://geomap.wilddogapp.com/)
+[![ 在 GeoMap 演示截图](screenshot.jpg)](http://location.wilddogapp.com/)
 
 
 ## 本地运行
