@@ -10,7 +10,7 @@ var locations = {
 var radiusInM = 1500;
 
 var config = {
-  syncURL: "https://al.wilddogio.com", //输入节点 URL
+  syncURL: "https://geomap.wilddogio.com", //输入节点 URL
   websocketOnly: true
 };
 wilddog.initializeApp(config);
