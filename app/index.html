@@ -1,59 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>野狗 - 轻松构建你的实时应用</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="轻松构建你的实时应用。野狗，实时应用的跨代重新定义，让每个终端设备都保持与云端的实时数据同步。对终端设备的操作急速被“克隆”到其他终端设备。全新的同步架构减少了请求次数，因此更加稳定，省电和省流量，还可以离线使用。从任何方面，野狗都在帮你提前领跑对手提供不可替代的优势。分分秒秒，野狗，狂奔速递！">
-    <meta name="keywords" content="wilddog,realtime,BaaS,HTML5,CoAP,野狗,野狗云,野狗实时,实时应用,实时,云服务,同步,长连接,物联网">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>野狗 - 轻松构建你的实时应用</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="轻松构建你的实时应用。野狗，实时应用的跨代重新定义，让每个终端设备都保持与云端的实时数据同步。对终端设备的操作急速被“克隆”到其他终端设备。全新的同步架构减少了请求次数，因此更加稳定，省电和省流量，还可以离线使用。从任何方面，野狗都在帮你提前领跑对手提供不可替代的优势。分分秒秒，野狗，狂奔速递！">
+  <meta name="keywords" content="wilddog,realtime,BaaS,HTML5,CoAP,野狗,野狗云,野狗实时,实时应用,实时,云服务,同步,长连接,物联网">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/examples-wildgeo.css">
-    </head>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/examples-wildgeo.css">
+</head>
 
 <body>
-    <div class="container">
-        <div class="container header"></div>
-        <div class="content">
-            <div class="example-details">
-                    <div id="mapContainer" class="mapContainer"></div>
-                    <div class="full-screen-aside">
-                      <h3 class="full-screen-logo"><img src="images/header-logo.png" alt=""></h3>
-                      <h4 class="full-screen-title">实时定位 DEMO</h4>
-                      <p class="full-screen-article">实时定位（Realtime location）可以实现地理位置信息云端同步，从而实现位置信息的同步、分发、存储、计算。<br>目前主要提供一下四个功能：</p>
-                      <p class="full-screen-function">位置同步<a class="full-screen-function-btn" id="traceFunction">正在演示</a></p>
-                      <p class="full-screen-article">通过高德定位 SDK 将设备的位置实时上传至野狗云端。其它设备能够实时获取云端的位置信息。</p>
-                      <p class="full-screen-function">实时轨迹<a class="full-screen-function-btn" id="pathFunction">演示</a></p>
-                      <p class="full-screen-article">记录并向云端存储设备的轨迹，用户可以同步其他设备的实时轨迹，并且可以进行轨迹计算。</p>
-                      <p class="full-screen-function">范围监听<a class="full-screen-function-btn" id="circleFunction">演示</a></p>
-                      <p class="full-screen-article">根据坐标独立监听范围，动态获取范围内设备的信息以及运动轨迹。</p>
-                      <p class="full-screen-function">地理围栏<a class="full-screen-function-dev">开发中</a></p>
-                      <p class="full-screen-article">创建地理围栏并且共享至所有设备，设备在出入地理围栏时会收到提醒。</p>
-                      <p class="full-screen-article-tip">出于安全考虑，地图中的数据均为模拟客户端上传，从云端实时获取。</p>
-                      <p class="full-screen-link-index"><a href="https://github.com/WildDogTeam/demo-js-geomap" class="full-screen-link" target="_blank">示例源码</a></p>
-                    </div>
-                </div>
-                <div class="description">
-                  <span class="slide-up-arr"></span>
-                  <div class="description-title">案例介绍</div>
-                  <div class="description-details">
-                    <p>你可以通过点击地图的不同区域，来查看各中心点周边3KM范围内的快递员实时运动轨迹。实际场景中，可配合定位系统实现路径规划、准点率监控等功能。</p>
-                    <p class="description-details-center">出于安全考虑，地图中的数据都是模拟数据。</p>
-                    <p>此方案采用 WildGeo + 野狗实时 + 高德地图 + 野狗GPS移动定位设备组成。</p>
-                    <div class="text-center"><img src="images/header-logo.svg" alt=""></div>
-                  </div>
-                </div>
-            </div>
-            <div class="activePoint" id="pointModel" hidden="">
-                <img src="images/point.png" class="point">
-                <img src="images/distance.png" class="distance">
-                <p class="distance-tip"></p>
-            </div>
+    <div class="container"></div>
+    <div class="content">
+      <div class="example-details">
+        <div id="mapContainer" class="mapContainer"></div>
+        <div class="full-screen-aside">
+          <h3 class="full-screen-logo"><img src="images/header-logo.png" alt=""></h3>
+          <h4 class="full-screen-title">实时定位 DEMO</h4>
+          <p class="full-screen-article">实时定位（Realtime Location）可以实现地理位置信息云端同步，从而实现位置信息的同步、分发、存储、计算。<br>目前主要提供一下四个功能：</p>
+          <p class="full-screen-function">位置同步<a class="full-screen-function-btn" id="traceFunction">正在演示</a></p>
+          <p class="full-screen-article">通过高德定位 SDK 将设备的位置实时上传至野狗云端。其它设备能够实时获取云端的位置信息。</p>
+          <p class="full-screen-function">实时轨迹<a class="full-screen-function-btn" id="pathFunction">演示</a></p>
+          <p class="full-screen-article">记录并向云端存储设备的轨迹，用户可以同步其他设备的实时轨迹，并且可以进行轨迹计算。</p>
+          <p class="full-screen-function">范围监听<a class="full-screen-function-btn" id="circleFunction">演示</a></p>
+          <p class="full-screen-article">根据坐标独立监听范围，动态获取范围内设备的信息以及运动轨迹。</p>
+          <p class="full-screen-function">地理围栏<a class="full-screen-function-dev">开发中</a></p>
+          <p class="full-screen-article">创建地理围栏并且共享至所有设备，设备在出入地理围栏时会收到提醒。</p>
+          <p class="full-screen-link-index"><a href="https://github.com/WildDogTeam/demo-js-geomap" class="full-screen-link" target="_blank">示例源码</a></p>
         </div>
+      </div>
+      <div class="description">
+        <span class="slide-up-arr"></span>
+        <div class="description-title">实时定位 DEMO</div>
+        <div class="description-details">
+          <p class="full-screen-article">实时定位（Realtime Location）可以实现地理位置信息云端同步，从而实现位置信息的同步、分发、存储、计算。目前主要提供一下四个功能：</p>
+          <div class="full-screen-div" id="moblie-trace">
+            <p class="full-screen-function">位置同步</p>
+            <p class="full-screen-article">通过高德定位 SDK 将设备的位置实时上传至野狗云端。其它设备能够实时获取云端的位置信息。</p>
+            <img src="images/arr-right-selected.png" class="arr-right-selected" style="display:block">
+            <img src="images/arr-right.png" class="arr-right" style="display:none">
+          </div>
+          <div class="full-screen-div" id="moblie-path">
+            <p class="full-screen-function">实时轨迹</p>
+            <p class="full-screen-article">记录并向云端存储设备的轨迹，用户可以同步其他设备的实时轨迹，并且可以进行轨迹计算。</p>
+            <img src="images/arr-right-selected.png" class="arr-right-selected" style="display:none">
+            <img src="images/arr-right.png" class="arr-right">
+          </div>
+          <div class="full-screen-div" id="moblie-circle">
+            <p class="full-screen-function">范围监听</p>
+            <p class="full-screen-article">根据坐标独立监听范围，动态获取范围内设备的信息以及运动轨迹。</p>
+            <img src="images/arr-right-selected.png" class="arr-right-selected" style="display:none">
+            <img src="images/arr-right.png" class="arr-right">
+          </div>
+          <div class="full-screen-div" id="moblie-trace">
+            <p class="full-screen-function">地理围栏<a class="full-screen-function-dev">开发中</a></p>
+            <p class="full-screen-article">创建地理围栏并且共享至所有设备，设备在出入地理围栏时会收到提醒。</p>
+            <!-- <img src="images/arr-right-selected.png" class="arr-right-selected">
+            <img src="images/arr-right.png" class="arr-right"> -->
+          </div>
+          <p class="full-screen-article-tip">出于安全考虑，地图中的数据均为模拟客户端上传，从云端实时获取。</p>
+          <img src='images/arr-down.png' class="slide-down-arr">
+        </div>
+      </div>
+    </div>
+    <div class="activePoint" id="pointModel" hidden="">
+      <img src="images/point.png" class="point">
+      <img src="images/distance.png" class="distance">
+      <p class="distance-tip"></p>
+    </div>
 
   <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdn.wilddog.com/sdk/js/2.5.8/wilddog.js"></script>

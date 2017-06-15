@@ -30,13 +30,6 @@ img{
     margin: 0 auto;
     position: relative;
 }
-.content {
-    box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 90px;
-    min-height: 100%;
-}
 .amap {
     padding-top: 30px;
 }
@@ -94,11 +87,12 @@ img{
 /* 全屏地图样式 */
 .mapContainer{
     position:fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 9;
-    width:100%;
-    height:100%;
+    width: 100%;
+    margin-right: 380px;
+    height: 100%;
 }
 .hide{
     display:none;
@@ -109,7 +103,7 @@ img{
     position:fixed;
     overflow-y:scroll;
     overflow-x:hidden;
-    left: 0;
+    right: 0;
     z-index:10000;
     box-sizing:border-box;
     -webkit-box-sizing:border-box;
@@ -134,7 +128,6 @@ img{
 }
 .full-screen-function{
     margin-bottom: 4px;
-    color: #555;
     font-weight:700;
     font-size: 16px;
 }
@@ -208,17 +201,17 @@ img{
         background: none;
     }
     .header {
-        width: auto;
+        /*width: auto;
         padding-top: 5px;
         padding-bottom: 5px;
         background-color: rgba(255, 255, 255, 0.9);
         position: relative;
         z-index: 99;
         margin-left: 10px;
-        margin-right: 10px;
+        margin-right: 10px;*/
     }
     .header:before {
-        content: "WildGeo配送员定位案例";
+        /*content: "WildGeo配送员定位案例";
         display:block;
         box-sizing:border-box;
         -webkit-box-sizing:border-box;
@@ -233,7 +226,7 @@ img{
         background-size: contain;
         text-align: center;
         line-height: 60px;
-        font-size: 24px;
+        font-size: 24px;*/
     }
     .content,
     .example-details,
@@ -259,8 +252,6 @@ img{
         position:absolute;
         z-index:999;
         bottom:0;
-        padding-left:2%;
-        padding-right:2%;
         box-sizing:border-box;
         -webkit-box-sizing:border-box;
         -moz-box-sizing:border-box;
@@ -275,15 +266,15 @@ img{
         text-align:center;
         line-height:4.5rem;
         font-weight:500;
-        background-color:rgba(255, 255, 255, 0.9);
+        background-color:rgba(255, 255, 255, 1);
         box-shadow:0 -1px 2px 0 rgba(0,0,0,0.1);
     }
     .description-details{
+        line-height: 1.5;
         padding-left:8%;
-        padding-right:8%;
-        padding-bottom:3%;
+        padding-right:10%;
         font-size:1.2rem;
-        background-color:rgba(255, 255, 255, 0.9);
+        background-color:rgba(255, 255, 255, 1);
         display:none;
     }
     .description-details-center{
@@ -294,10 +285,21 @@ img{
         position:absolute;
         top:-60px;
         left:50%;
-        z-index:1;
+        z-index:2;
         width:60px;
         padding-top:60px;
         background:url(../images/arr.png) no-repeat center bottom/60px;
+        transform:translate(-50%);
+        -webkit-transform:translate(-50%);
+        -moz-transform:translate(-50%);
+        -ms-transform:translate(-50%);
+        -o-transform:translate(-50%);
+    }
+    .slide-down-arr{
+        width: 30px;
+        height: 16px;
+        margin-left:50%;
+        z-index:1;
         transform:translate(-50%);
         -webkit-transform:translate(-50%);
         -moz-transform:translate(-50%);
@@ -310,6 +312,37 @@ img{
     }
     .full-screen-aside{
         display:none;
+    }
+    .full-screen-function{
+        line-height: 2;
+        margin-bottom: 0px;
+        font-weight:600;
+        font-size: 14px;
+    }
+    .full-screen-article{
+        margin-bottom:8px;
+        font-size: 14px;
+    }
+    .full-screen-article-tip{
+        font-size: 12px;
+    }
+    .full-screen-div{
+        position: relative;
+    }
+    .arr-right{
+        height: 20px;
+        position: absolute;
+        right: -6%;
+        /*margin-top: -45px;*/
+        top: 40%;
+    }
+    .arr-right-selected{
+        /*display: none;*/
+        height: 20px;
+        position: absolute;
+        right: -6%;
+        /*margin-top: -45px;*/
+        top: 40%;
     }
 }
 @media screen and (min-width: 320px) and (max-width: 374px) {

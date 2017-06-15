@@ -3,7 +3,8 @@ var map, circle, stationMarker, markerImg;
 
 // Set the center as Wilddog HQ
 var locations = {
-  "WilddogHQ": [39.897614, 116.408032]
+  "WilddogHQ": [39.897614, 116.408032],
+  "center": [40.01152,116.478155]
 };
 
 // Query radius
@@ -21,6 +22,7 @@ var wildGeo = wilddog.location();
 var center = wildGeo.initCustomPosition({
   location: locations['WilddogHQ']
 });
+
 
 /*************/
 /*  GEOQUERY */
@@ -114,7 +116,7 @@ var defineMap = function(loc, zoom) {
 };
 
 function initializeMap() {
-  var loc = new AMap.LngLat(116.465953, 40.021083);
+  var loc = new AMap.LngLat(locations.center[1], locations.center[0]);
   //初始化地图对象，加载地图
   var UA = navigator.userAgent;
   if (UA.indexOf("Mobile") == -1 || UA.indexOf("Mobile") == -1) {
@@ -386,7 +388,7 @@ $('#traceFunction').bind('click', function() {
   }
   currentFunction = 'traceFunction';
   startRealPosition();
-  map.setCenter(new AMap.LngLat(116.465953, 40.021083));
+  map.setCenter(new AMap.LngLat(locations.center[1], locations.center[0]));
   $('#traceFunction').text('正在演示');
   $('#pathFunction').text('演示');
   $('#circleFunction').text('演示');
@@ -405,7 +407,7 @@ $('#pathFunction').bind('click', function() {
   }
   currentFunction = 'pathFunction';
   startRealPath();
-  map.setCenter(new AMap.LngLat(116.465953, 40.021083));
+  map.setCenter(new AMap.LngLat(locations.center[1], locations.center[0]));
   $('#traceFunction').text('演示');
   $('#pathFunction').text('正在演示');
   $('#circleFunction').text('演示');
