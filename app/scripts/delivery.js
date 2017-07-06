@@ -11,7 +11,7 @@ var locations = {
 var radiusInM = 1500;
 
 var config = {
-  syncURL: "https://dongkai.wilddogio.com", //输入节点 URL
+  syncURL: "https://<appId>.wilddogio.com", //输入节点 URL
   websocketOnly: true
 };
 wilddog.initializeApp(config);
