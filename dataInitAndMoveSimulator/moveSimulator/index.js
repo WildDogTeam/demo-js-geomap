@@ -6,9 +6,9 @@ wilddog.regService('location', function(app) {
         throw new Error('application not initialized!Please call wilddog.initializeApp first');
         return;
     };
-    wilddog.Location = WildLocation;
     return new WildLocation(app);
 });
+wilddog.Location = WildLocation;
 
 var config = {
     syncURL: "https://<appId>.wilddogio.com",
