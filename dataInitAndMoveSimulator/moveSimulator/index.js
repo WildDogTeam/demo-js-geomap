@@ -6,6 +6,7 @@ wilddog.regService('location', function(app) {
         throw new Error('application not initialized!Please call wilddog.initializeApp first');
         return;
     };
+    wilddog.Location = WildLocation;
     return new WildLocation(app);
 });
 
@@ -121,15 +122,17 @@ function startUpdateActivePoint() {
     var pathArrayIndex = 0;
     wildLocation.removePath('activePoint');
     setInterval(function() {
-        var position = wildLocation.initCustomPosition({
-            location: pathArray[pathArrayIndex]
-        });
-        wildLocation.set('activePoint', position);
-        sync.child('WilddogLocation/path/activePoint/points').push({
+        var position = wildLocation.customPosition(pathArray[pathArrayIndex]);
+        wildLocation.setPosition('activePoint', position);
+        var pushKey = 'points/' + sync.push().key();
+        var newData = {};
+        newData[pushKey] = {
             geohash:'defaulthash',
             location:pathArray[pathArrayIndex],
             timestamp:Date.now()
-        });
+        };
+        newData.isExists = true;
+        sync.child('WilddogLocation/path/activePoint').update(newData);
         pathArrayIndex++;
         if (pathArrayIndex >= pathArray.length) {
             pathArrayIndex = 0;
@@ -146,12 +149,10 @@ var start = function() {
         var key = defaultArray[index].key;
         var oldLocation = defaultArray[index].location;
         var newLocation = getNewLocation(oldLocation);
-        var position = wildLocation.initCustomPosition({
-            location: newLocation
-        });
+        var position = wildLocation.customPosition(newLocation);
 
         sync.child('Beijing/' + key).set(newLocation);
-        wildLocation.set(key, position);
+        wildLocation.setPosition(key, position);
     }, 150);
 }
 

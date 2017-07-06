@@ -141,7 +141,7 @@ img{
 }
 .full-screen-link-index{
     float: right;
-    padding-top:46px;
+    padding-top:26px;
     padding-bottom:20px;
 }
 .full-screen-link{
@@ -183,6 +183,21 @@ img{
     position: absolute;
     margin-top: 20px;
     margin-left: 60px;
+}
+.signup-btn{
+    border:1px solid #e84f06;
+    border-radius:2px;
+    width:120px;
+    height:31px;
+    background-color: white;
+    color: #E84D1E;
+    margin-right: 120px;
+}
+.signup-btn:hover{
+    background-color: #f5c3af;
+}
+.signup-btn:active{
+    background-color: #f0a082;
 }
 @media screen and (min-width: 320px) and (max-width: 979px) {
     html,

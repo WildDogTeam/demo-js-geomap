@@ -11,7 +11,7 @@ var locations = {
 var radiusInM = 1500;
 
 var config = {
-  syncURL: "https://geomap.wilddogio.com", //输入节点 URL
+  syncURL: "https://dongkai.wilddogio.com", //输入节点 URL
   websocketOnly: true
 };
 wilddog.initializeApp(config);
@@ -19,9 +19,7 @@ wilddog.initializeApp(config);
 // Create a new WildGeo instance, pulling data from the public transit data
 var wildGeo = wilddog.location();
 
-var center = wildGeo.initCustomPosition({
-  location: locations['WilddogHQ']
-});
+var center = wildGeo.customPosition(locations['WilddogHQ']);
 
 
 /*************/
@@ -42,7 +40,7 @@ function startCircleQuery() {
   //     delete deliverysInQuery[key];
   //   }
   // };
-  geoQuery = wildGeo.initCircleQuery({
+  geoQuery = wildGeo.circleQuery({
     center: center,
     radius: radiusInM
   });
@@ -202,9 +200,7 @@ function initializeMap() {
   var clickEventListener = AMap.event.addListener(map, 'click', function(e) {
     if (39.856512 < e.lnglat.getLat() && e.lnglat.getLat() < 39.963432 && 116.310527 < e.lnglat.getLng() && e.lnglat.getLng() < 116.458844) {
       lnglat = e.lnglat;
-      center = wildGeo.initCustomPosition({
-        location: [lnglat.getLat(), lnglat.getLng()]
-      });
+      center = wildGeo.customPosition([lnglat.getLat(), lnglat.getLng()]);
       circle.setCenter(lnglat);
       stationMarker.setPosition(lnglat);
       updateCriteria();
@@ -213,10 +209,7 @@ function initializeMap() {
 
   var updateCriteria = _.debounce(function() {
     lnglat = circle.getCenter();
-    var options = {
-      location: [lnglat.getLat(), lnglat.getLng()]
-    };
-    var position = wildGeo.initCustomPosition(options);
+    var position = wildGeo.customPosition([lnglat.getLat(), lnglat.getLng()]);
     geoQuery.updateCriteria({
       center: position,
       radius: radiusInM
@@ -257,14 +250,12 @@ function createdeliveryMarker(deliveryId, delivery) {
   return marker;
 }
 
-var wilddogAddress = wildGeo.initCustomPosition({
-  location: [40.021083, 116.465953]
-});
+var wilddogAddress = wildGeo.customPosition([40.021083, 116.465953]);
 
 function createPointMarker(position) {
   //自定义点标记内容
   var markerContent = $('#pointModel').clone();
-  var distance = Location.distance(position, wilddogAddress);
+  var distance = wilddog.Location.distance(position, wilddogAddress);
 
   markerContent.get()[0].hidden = false;
   markerContent.get()[0].id = 'activePoint';
@@ -317,13 +308,13 @@ function createPathPolyline(lineArr) {
 var activeMarker, offActivePoint;
 // 开启位置同步
 function startRealPosition() {
-  offActivePoint = wildGeo.on('activePoint', function(position) {
+  offActivePoint = wildGeo.onPosition('activePoint', function(position) {
     if (!activeMarker) {
       activeMarker = createPointMarker(position)
     } else {
       var newPosition = new AMap.LngLat(position.longitude(), position.latitude());
       activeMarker.moveTo(newPosition, 500);
-      var distance = Location.distance(position, wilddogAddress);
+      var distance = wilddog.Location.distance(position, wilddogAddress);
       var content = activeMarker.getContent();
       content.children[2].innerText = '距离野狗 ' + Math.round(distance) + ' 米';
     }
@@ -339,9 +330,7 @@ function stopRealPosition() {
 var pathPolyline, latestPointMarker, offActivePath, pathQuery;
 // 开启实时轨迹
 function startRealPath() {
-  pathQuery = wildGeo.initPathQuery({
-    key: 'activePoint'
-  });
+  pathQuery = wildGeo.pathQuery('activePoint');
   offActivePath = pathQuery.on(function(pathSnapshot) {
     var aMapPositions = [];
     var points = pathSnapshot.points();
@@ -352,6 +341,9 @@ function startRealPath() {
       pathPolyline = createPathPolyline(aMapPositions);
     } else {
       pathPolyline.setPath(aMapPositions);
+    };
+    if (!pathSnapshot.latestPoint()) {
+        return;
     };
     if (!latestPointMarker) {
         latestPointMarker = createLastestPointMarker(pathSnapshot.latestPoint(), pathSnapshot.length());
@@ -431,4 +423,8 @@ $('#circleFunction').bind('click', function() {
   $('#traceFunction').text('演示');
   $('#pathFunction').text('演示');
   $('#circleFunction').text('正在演示');
+})
+
+$('#signup-btn').bind('click', function () {
+    window.open('https://www.wilddog.com/my-account/signup');
 })

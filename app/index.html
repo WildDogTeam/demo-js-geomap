@@ -22,7 +22,7 @@
         <div class="full-screen-aside">
           <h3 class="full-screen-logo"><img src="images/header-logo.png" alt=""></h3>
           <h4 class="full-screen-title">实时定位 DEMO</h4>
-          <p class="full-screen-article">实时定位（Realtime Location）可以实现地理位置信息云端同步，从而实现位置信息的同步、分发、存储、计算。<br>目前主要提供一下四个功能：</p>
+          <p class="full-screen-article">实时定位（Realtime Location）可以实现地理位置信息云端同步，从而实现位置信息的同步、分发、存储、计算。<br>目前主要提供以下四个功能：</p>
           <p class="full-screen-function">位置同步<a class="full-screen-function-btn" id="traceFunction">正在演示</a></p>
           <p class="full-screen-article">通过高德定位 SDK 将设备的位置实时上传至野狗云端。其它设备能够实时获取云端的位置信息。</p>
           <p class="full-screen-function">实时轨迹<a class="full-screen-function-btn" id="pathFunction">演示</a></p>
@@ -31,7 +31,8 @@
           <p class="full-screen-article">根据坐标独立监听范围，动态获取范围内设备的信息以及运动轨迹。</p>
           <p class="full-screen-function">地理围栏<a class="full-screen-function-dev">开发中</a></p>
           <p class="full-screen-article">创建地理围栏并且共享至所有设备，设备在出入地理围栏时会收到提醒。</p>
-          <p class="full-screen-link-index"><a href="https://github.com/WildDogTeam/demo-js-geomap" class="full-screen-link" target="_blank">示例源码</a></p>
+          <p class="full-screen-article-tip">出于安全考虑，地图中的数据均为模拟客户端上传，从云端实时获取。</p>
+          <p class="full-screen-link-index"><button id='signup-btn' type="button" name="signup" class="signup-btn">立即注册</button><a href="https://github.com/WildDogTeam/demo-js-geomap" class="full-screen-link" target="_blank">示例源码</a></p>
         </div>
       </div>
       <div class="description">
@@ -77,7 +78,7 @@
   <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdn.wilddog.com/sdk/js/2.5.8/wilddog.js"></script>
   <script src="https://webapi.amap.com/maps?v=1.3&key=76f167aa351abefe78920b55777f9be6"></script>
-  <script src="https://cdn.wilddog.com/sdk/js/0.1.2/wilddog-location.js"></script>
+  <script src="https://cdn.wilddog.com/sdk/js/0.2.0/wilddog-location.js"></script>
   <script src="scripts/collapse.js"></script>
   <script src="scripts/jquery.pagination.js"></script>
   <script src="scripts/lodash.min.js"></script>

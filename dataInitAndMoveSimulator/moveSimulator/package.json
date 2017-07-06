@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "wilddog": "^2.5.10"
+    "wilddog": "^2.5.10",
+    "wilddog-location": "^0.2.0"
   }
 }
